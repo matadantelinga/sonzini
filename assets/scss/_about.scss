@@ -1,0 +1,10 @@
+#about-content {
+  background: url(../images/bg-about.png) left center no-repeat;
+  background-size: cover;
+  position: relative;
+  @media (max-width: 767px) {
+    &.content-padding {
+      padding-bottom: 0;
+    }
+  }
+}
