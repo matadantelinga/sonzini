@@ -238,6 +238,14 @@ a:hover {
   }
 }
 
+.gray-gradient-bg {
+  background: white;
+  background: -moz-linear-gradient(180deg, white 21%, #ebebeb 82%);
+  background: -webkit-linear-gradient(180deg, white 21%, #ebebeb 82%);
+  background: linear-gradient(180deg, white 21%, #ebebeb 82%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ebebeb",GradientType=1);
+}
+
 input:focus {
   outline: none;
   box-shadow: none;
@@ -525,6 +533,7 @@ header .menu-wrapper.active nav {
     width: 100% !important;
     display: block;
     max-width: 100% !important;
+    text-align: center;
   }
 }
 
@@ -566,6 +575,7 @@ header .menu-wrapper.active nav {
   width: 250px;
   display: block;
   margin: auto;
+  text-align: center;
 }
 
 .btn-wrapper {
@@ -675,6 +685,7 @@ header .menu-wrapper.active nav {
 #slick-tributes .slick-item img {
   margin: 0 auto 10px;
   max-width: 120px;
+  border-radius: 100%;
 }
 #slick-tributes .slick-item .slick-properties {
   font-family: "catamaran";
@@ -685,6 +696,9 @@ header .menu-wrapper.active nav {
 #slick-tributes .slick-item .slick-properties .date {
   color: #707070;
   font-weight: 300;
+}
+#slick-tributes.tributes-secondary .slick-item img {
+  border-radius: 5px;
 }
 
 .slick-next::before,
@@ -727,25 +741,71 @@ header .menu-wrapper.active nav {
 #about-section .section-content .section-body {
   margin: 2em 0;
 }
+#about-section.about-secondary-third .row {
+  flex-direction: row-reverse;
+}
+#about-section.about-section-secondary, #about-section.about-secondary-third {
+  color: #000;
+}
+#about-section.about-section-secondary .section-content, #about-section.about-secondary-third .section-content {
+  text-align: left;
+}
+#about-section.about-section-secondary .section-image, #about-section.about-secondary-third .section-image {
+  min-height: 550px;
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #about-section.about-section-secondary .row, #about-section.about-secondary-third .row {
+    flex-direction: column-reverse;
+  }
+  #about-section.about-section-secondary .section-image, #about-section.about-secondary-third .section-image {
+    min-height: 350px;
+    margin-bottom: 2em;
+  }
+  #about-section.about-section-secondary .section-content, #about-section.about-secondary-third .section-content {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  #about-section.about-section-secondary .row, #about-section.about-secondary-third .row {
+    flex-direction: column-reverse;
+  }
+  #about-section.about-section-secondary .section-image, #about-section.about-secondary-third .section-image {
+    min-height: 250px;
+    margin-bottom: 2em;
+  }
+  #about-section.about-section-secondary .section-content, #about-section.about-secondary-third .section-content {
+    text-align: center;
+  }
+}
 
 #blog-wrapper {
   background-color: #ebebeb;
 }
-#blog-wrapper #blog-slider .slick-item .blog-card {
+#blog-wrapper.blogslider-secondary-wrapper #blog-slider {
+  display: none;
+}
+#blog-wrapper.blogslider-secondary-wrapper #blog-slider-secondary .slick-item .blog-card {
+  margin: 0 15px;
+}
+#blog-wrapper #blog-slider .slick-item .blog-card,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card {
   margin: 0 25px;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.43);
 }
-#blog-wrapper #blog-slider .slick-item .blog-card .card-image {
+#blog-wrapper #blog-slider .slick-item .blog-card .card-image,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card .card-image {
   overflow: hidden;
 }
-#blog-wrapper #blog-slider .slick-item .blog-card .card-image img {
+#blog-wrapper #blog-slider .slick-item .blog-card .card-image img,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card .card-image img {
   transition: transform 0.3s;
   width: 100%;
   object-fit: cover;
 }
-#blog-wrapper #blog-slider .slick-item .blog-card .card-title {
+#blog-wrapper #blog-slider .slick-item .blog-card .card-title,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card .card-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -754,20 +814,24 @@ header .menu-wrapper.active nav {
   cursor: pointer;
   text-transform: capitalize;
 }
-#blog-wrapper #blog-slider .slick-item .blog-card .card-title img {
+#blog-wrapper #blog-slider .slick-item .blog-card .card-title img,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card .card-title img {
   max-height: 18px;
 }
-#blog-wrapper #blog-slider .slick-item .blog-card:hover .card-image img {
+#blog-wrapper #blog-slider .slick-item .blog-card:hover .card-image img,
+#blog-wrapper #blog-slider-secondary .slick-item .blog-card:hover .card-image img {
   transform: scale(1.2);
   transition: transform 0.7s;
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  #blog-wrapper #blog-slider .slick-item .blog-card .card-title {
+  #blog-wrapper #blog-slider .slick-item .blog-card .card-title,
+  #blog-wrapper #blog-slider-secondary .slick-item .blog-card .card-title {
     min-height: 80px;
   }
 }
 @media (max-width: 767px) {
-  #blog-wrapper #blog-slider .slick-item .blog-card {
+  #blog-wrapper #blog-slider .slick-item .blog-card,
+  #blog-wrapper #blog-slider-secondary .slick-item .blog-card {
     margin: 0;
   }
 }
@@ -775,14 +839,26 @@ header .menu-wrapper.active nav {
 #testimonial-wrapper {
   color: #fff;
 }
-#testimonial-wrapper #testimonial-slider {
+#testimonial-wrapper.testimonial-wrapper-secondary {
+  color: #000;
+}
+#testimonial-wrapper.testimonial-wrapper-secondary #testimonial-slider-secondary .slick-item .testimonial-item {
+  background: #f3f4f5;
+  padding: 20px 15px;
+  margin: 0 15px;
+  border-radius: 7px;
+}
+#testimonial-wrapper #testimonial-slider,
+#testimonial-wrapper #testimonial-slider-secondary {
   margin: 2em 0;
 }
-#testimonial-wrapper #testimonial-slider .testimonial-item {
+#testimonial-wrapper #testimonial-slider .testimonial-item,
+#testimonial-wrapper #testimonial-slider-secondary .testimonial-item {
   text-align: center;
   line-height: 28px;
 }
-#testimonial-wrapper #testimonial-slider .testimonial-item .username {
+#testimonial-wrapper #testimonial-slider .testimonial-item .username,
+#testimonial-wrapper #testimonial-slider-secondary .testimonial-item .username {
   font-weight: bold;
   font-size: 18px;
   font-family: "catamaran";

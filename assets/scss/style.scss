@@ -245,6 +245,26 @@ a {
   }
 }
 
+.gray-gradient-bg {
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 21%,
+    rgba(235, 235, 235, 1) 82%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 21%,
+    rgba(235, 235, 235, 1) 82%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 21%,
+    rgba(235, 235, 235, 1) 82%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ebebeb",GradientType=1);
+}
+
 @import "form";
 @import "header-footer";
 @import "button";
