@@ -130,4 +130,12 @@ $(document).ready(function () {
 			$(this).addClass("active");
 		}
 	});
+
+	$("#accordion .btn-link").click(function () {
+		if ($(this).attr("aria-expanded") === "true") {
+			$(this).removeClass("active");
+		} else {
+			$(this).addClass("active");
+		}
+	});
 });

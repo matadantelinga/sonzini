@@ -27,6 +27,15 @@ a {
 	}
 }
 
+button {
+	&.btn {
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}
+
 .content-padding {
 	padding: 5em 0;
 	@media (max-width: 767px) {
@@ -129,6 +138,7 @@ a {
 				a {
 					text-align: center;
 					font-size: 14px;
+					padding: 0 3px 10px;
 				}
 			}
 		}
@@ -140,6 +150,10 @@ a {
 	font-size: 50px;
 	font-weight: bold;
 	margin-bottom: 20px;
+	text-transform: uppercase;
+	@media (max-width: 767px) {
+		font-size: 38px;
+	}
 }
 
 .page-image {
@@ -285,9 +299,33 @@ a {
 	text-transform: uppercase;
 }
 
+.gray-bg {
+	background-color: $gray;
+}
+.darkBlue-bg {
+	background-color: $darkBlue;
+	p,
+	ul {
+		color: #fff;
+	}
+}
+.list-with-icon {
+	padding-left: 20px;
+	li {
+		list-style: none;
+		background: url(../images/icon-check-orange.svg) left center no-repeat;
+		background-size: 20px;
+		padding-left: 30px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+}
+
 @import "form";
 @import "header-footer";
 @import "button";
 @import "homepage";
 @import "about";
-@import "services";
+@import "card-content";
+@import "accordion";
+@import "plan-ahead";

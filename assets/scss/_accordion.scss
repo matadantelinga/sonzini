@@ -1,0 +1,39 @@
+.accordion-wrapper {
+	padding: 3em 0;
+
+	#accordion {
+		.card {
+			border-bottom: 0;
+			margin-bottom: 1em;
+			.card-header {
+				button {
+					display: flex;
+					align-items: center;
+					width: 100%;
+					span {
+						flex: 1;
+						text-align: left;
+					}
+
+					i {
+						transition: 0.5s;
+						color: $orange;
+					}
+					&.active {
+						i {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+
+			button {
+				color: $darkBlue;
+				font-family: $headerFont;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-size: 18px;
+			}
+		}
+	}
+}
