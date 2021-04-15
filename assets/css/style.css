@@ -240,10 +240,40 @@ a:hover {
 
 .gray-gradient-bg {
   background: white;
-  background: -moz-linear-gradient(180deg, white 21%, #ebebeb 82%);
-  background: -webkit-linear-gradient(180deg, white 21%, #ebebeb 82%);
-  background: linear-gradient(180deg, white 21%, #ebebeb 82%);
+  background: -moz-linear-gradient(180deg, white 73%, #ebebeb 97%);
+  background: -webkit-linear-gradient(180deg, white 73%, #ebebeb 97%);
+  background: linear-gradient(180deg, white 73%, #ebebeb 97%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ebebeb",GradientType=1);
+}
+
+.text-orange {
+  color: #de732c;
+}
+
+.orange-link {
+  color: #de732c;
+  text-transform: uppercase;
+  font-family: "catamaran";
+}
+.orange-link:hover {
+  color: #0c2230;
+}
+
+.content-image {
+  display: flex;
+  padding: 2em 0;
+}
+.content-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.paragraf-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "catamaran";
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 input:focus {
@@ -1001,6 +1031,62 @@ header .menu-wrapper.active nav {
   }
   .location-wrapper .location-item .location-detail {
     padding: 20px;
+  }
+}
+
+#services-overview-content.content-padding {
+  padding: 5em 0 0;
+}
+
+.services-wrapper {
+  padding: 3em 0 0;
+}
+.services-wrapper .services-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.services-wrapper .services-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.services-wrapper .services-item .services-image,
+.services-wrapper .services-item .services-detail {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.services-wrapper .services-item .services-image {
+  display: flex;
+}
+.services-wrapper .services-item .services-image img {
+  width: 100%;
+  object-fit: cover;
+}
+.services-wrapper .services-item .services-detail {
+  padding: 2em;
+}
+.services-wrapper .services-item .services-detail .title {
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 3px;
+  font-family: "catamaran";
+  text-transform: uppercase;
+}
+.services-wrapper .services-item .services-detail p {
+  margin: 1.5em 0;
+  line-height: 25px;
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .services-wrapper .services-item .services-image,
+  .services-wrapper .services-item .services-detail {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .services-wrapper .services-item .services-image,
+  .services-wrapper .services-item .services-detail {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
