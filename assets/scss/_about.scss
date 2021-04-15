@@ -1,10 +1,110 @@
 #about-content {
-  background: url(../images/bg-about.png) left center no-repeat;
-  background-size: cover;
-  position: relative;
-  @media (max-width: 767px) {
-    &.content-padding {
-      padding-bottom: 0;
-    }
-  }
+	background: url(../images/bg-about.png) left center no-repeat;
+	background-size: cover;
+	position: relative;
+	@media (max-width: 767px) {
+		&.content-padding {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.staff-card-wrapper {
+	padding: 2em 0 0;
+}
+.staff-card {
+	margin-bottom: 35px;
+
+	.staff-image {
+		margin-bottom: 10px;
+		img {
+			max-width: 100%;
+		}
+	}
+	.staff-properties {
+		text-align: center;
+		.name {
+			font-size: 28px;
+			font-weight: bold;
+		}
+		.position {
+			font-weight: 300;
+			margin: 10px 0;
+		}
+	}
+	.btn-wrapper {
+		padding: 0 0 1em;
+		a {
+			color: $orange;
+			position: relative;
+			padding-bottom: 10px;
+			transition: all 0.3s ease;
+			&:after {
+				transition: all 0.3s ease;
+				content: "";
+				height: 3px;
+				width: 100%;
+				background-color: $orange;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			&:hover {
+				&:after {
+					width: 0%;
+				}
+			}
+		}
+	}
+}
+
+.location-wrapper {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 3em 0 0;
+	.location-item {
+		flex: 0 0 33.3%;
+		max-width: 33.3%;
+		.location-detail {
+			text-align: center;
+			padding: 2em 0;
+			.title {
+				font-weight: bold;
+				font-size: 18px;
+			}
+			.detail {
+				margin: 12px 0;
+				line-height: 25px;
+			}
+		}
+		.location-image {
+			display: flex;
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+		.location-item {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 2em;
+			.location-detail {
+				padding: 20px;
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		.location-item {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 2em;
+			.location-detail {
+				padding: 20px;
+			}
+		}
+	}
 }

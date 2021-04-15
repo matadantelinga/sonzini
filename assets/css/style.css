@@ -906,4 +906,102 @@ header .menu-wrapper.active nav {
   }
 }
 
+.staff-card-wrapper {
+  padding: 2em 0 0;
+}
+
+.staff-card {
+  margin-bottom: 35px;
+}
+.staff-card .staff-image {
+  margin-bottom: 10px;
+}
+.staff-card .staff-image img {
+  max-width: 100%;
+}
+.staff-card .staff-properties {
+  text-align: center;
+}
+.staff-card .staff-properties .name {
+  font-size: 28px;
+  font-weight: bold;
+}
+.staff-card .staff-properties .position {
+  font-weight: 300;
+  margin: 10px 0;
+}
+.staff-card .btn-wrapper {
+  padding: 0 0 1em;
+}
+.staff-card .btn-wrapper a {
+  color: #de732c;
+  position: relative;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.staff-card .btn-wrapper a:after {
+  transition: all 0.3s ease;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: #de732c;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.staff-card .btn-wrapper a:hover:after {
+  width: 0%;
+}
+
+.location-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3em 0 0;
+}
+.location-wrapper .location-item {
+  flex: 0 0 33.3%;
+  max-width: 33.3%;
+}
+.location-wrapper .location-item .location-detail {
+  text-align: center;
+  padding: 2em 0;
+}
+.location-wrapper .location-item .location-detail .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.location-wrapper .location-item .location-detail .detail {
+  margin: 12px 0;
+  line-height: 25px;
+}
+.location-wrapper .location-item .location-image {
+  display: flex;
+}
+.location-wrapper .location-item .location-image img {
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .location-wrapper .location-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2em;
+  }
+  .location-wrapper .location-item .location-detail {
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .location-wrapper .location-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 2em;
+  }
+  .location-wrapper .location-item .location-detail {
+    padding: 20px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
