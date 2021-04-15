@@ -321,6 +321,93 @@ button {
 	}
 }
 
+.pagination-wrapper {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 0;
+		margin: 0;
+		justify-content: space-between;
+		li {
+			list-style: none;
+			a {
+				color: #000000;
+				transition: all 0.2s ease;
+			}
+			&.active,
+			&:hover {
+				a {
+					background-color: $orange;
+					color: #fff;
+				}
+			}
+		}
+		.pagination-nav {
+			.next-prev-btn {
+				display: flex;
+				align-items: center;
+				padding: 7px 10px;
+				transition: all 0.2s ease;
+				a {
+					text-transform: uppercase;
+				}
+				i {
+					color: $orange;
+					font-size: 24px;
+				}
+				&:hover,
+				&.active {
+					background-color: $orange;
+					color: #fff;
+					i {
+						color: #fff;
+					}
+					a {
+						background-color: transparent;
+					}
+				}
+				&.prev {
+					i {
+						margin-right: 10px;
+					}
+				}
+				&.next {
+					i {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+		.pagination-num {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			li {
+				a {
+					transition: all 0.2s ease;
+					padding: 7px 15px;
+					margin: 5px;
+					display: block;
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		.pagination-nav {
+			width: 100%;
+			text-align: center;
+			li {
+				justify-content: center;
+			}
+		}
+		.pagination-num {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
 @import "form";
 @import "header-footer";
 @import "button";
@@ -329,3 +416,4 @@ button {
 @import "card-content";
 @import "accordion";
 @import "plan-ahead";
+@import "obituaries";

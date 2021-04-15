@@ -312,6 +312,79 @@ button.btn:focus {
   padding-top: 10px;
 }
 
+.pagination-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+}
+.pagination-wrapper ul li {
+  list-style: none;
+}
+.pagination-wrapper ul li a {
+  color: #000000;
+  transition: all 0.2s ease;
+}
+.pagination-wrapper ul li.active a, .pagination-wrapper ul li:hover a {
+  background-color: #de732c;
+  color: #fff;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn {
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  transition: all 0.2s ease;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn a {
+  text-transform: uppercase;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn i {
+  color: #de732c;
+  font-size: 24px;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn:hover, .pagination-wrapper ul .pagination-nav .next-prev-btn.active {
+  background-color: #de732c;
+  color: #fff;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn:hover i, .pagination-wrapper ul .pagination-nav .next-prev-btn.active i {
+  color: #fff;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn:hover a, .pagination-wrapper ul .pagination-nav .next-prev-btn.active a {
+  background-color: transparent;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn.prev i {
+  margin-right: 10px;
+}
+.pagination-wrapper ul .pagination-nav .next-prev-btn.next i {
+  margin-left: 10px;
+}
+.pagination-wrapper ul .pagination-num {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pagination-wrapper ul .pagination-num li a {
+  transition: all 0.2s ease;
+  padding: 7px 15px;
+  margin: 5px;
+  display: block;
+}
+@media (max-width: 767px) {
+  .pagination-wrapper .pagination-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .pagination-wrapper .pagination-nav li {
+    justify-content: center;
+  }
+  .pagination-wrapper .pagination-num {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 input:focus {
   outline: none;
   box-shadow: none;
@@ -1160,6 +1233,58 @@ header .menu-wrapper.active nav {
 #talklifetime-content {
   margin-top: -11em;
   padding-top: 15em;
+}
+
+#obituaries-content {
+  background: #f5f5f5;
+}
+
+.obit-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+.obit-card .obit-image {
+  flex: 0 0 30%;
+  max-width: 30%;
+  display: flex;
+}
+.obit-card .obit-image img {
+  object-fit: cover;
+  width: 100%;
+}
+.obit-card .obit-detail {
+  padding: 2em;
+  flex: 1;
+}
+.obit-card .obit-detail .name {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "catamaran";
+}
+.obit-card .obit-detail .date {
+  color: #9D9D9D;
+  font-size: 13px;
+  display: block;
+  margin: 1.25em 0;
+}
+.obit-card .obit-detail .btn-wrapper a:first-child {
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .obit-card .obit-image {
+    max-height: 250px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .obit-card .btn-wrapper a:first-child {
+    margin-bottom: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
