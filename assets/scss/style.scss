@@ -408,6 +408,35 @@ button {
 	}
 }
 
+.subscribe-email-form {
+	max-width: 50%;
+	margin: auto;
+	.input-group {
+		flex-direction: column;
+
+		.form-control {
+			width: 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			height: 50px;
+		}
+	}
+	.btn-orange {
+		width: 100%;
+		height: 50px;
+	}
+	@media (max-width: 767px) {
+		max-width: 100%;
+	}
+}
+
+.page-icon {
+	margin-bottom: 10px;
+	img {
+		max-width: 100px;
+	}
+}
+
 @import "form";
 @import "header-footer";
 @import "button";
