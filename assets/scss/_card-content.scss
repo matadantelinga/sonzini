@@ -59,3 +59,53 @@
 		}
 	}
 }
+
+.user-card-wrapper {
+	padding: 2em 0 0;
+}
+.user-card {
+	margin-bottom: 35px;
+
+	.user-image {
+		margin-bottom: 10px;
+		img {
+			max-width: 100%;
+		}
+	}
+	.user-properties {
+		text-align: center;
+		.name {
+			font-size: 28px;
+			font-weight: bold;
+		}
+		.position {
+			font-weight: 300;
+			margin: 10px 0;
+		}
+	}
+	.btn-wrapper {
+		padding: 0 0 1em;
+		.text-link {
+			color: $orange;
+			position: relative;
+			padding-bottom: 10px;
+			transition: all 0.3s ease;
+			&:after {
+				transition: all 0.3s ease;
+				content: "";
+				height: 3px;
+				width: 100%;
+				background-color: $orange;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			&:hover {
+				&:after {
+					width: 0%;
+				}
+			}
+		}
+	}
+}

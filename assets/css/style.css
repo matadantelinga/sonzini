@@ -1045,54 +1045,6 @@ header .menu-wrapper.active nav {
   }
 }
 
-.staff-card-wrapper {
-  padding: 2em 0 0;
-}
-
-.staff-card {
-  margin-bottom: 35px;
-}
-.staff-card .staff-image {
-  margin-bottom: 10px;
-}
-.staff-card .staff-image img {
-  max-width: 100%;
-}
-.staff-card .staff-properties {
-  text-align: center;
-}
-.staff-card .staff-properties .name {
-  font-size: 28px;
-  font-weight: bold;
-}
-.staff-card .staff-properties .position {
-  font-weight: 300;
-  margin: 10px 0;
-}
-.staff-card .btn-wrapper {
-  padding: 0 0 1em;
-}
-.staff-card .btn-wrapper a {
-  color: #de732c;
-  position: relative;
-  padding-bottom: 10px;
-  transition: all 0.3s ease;
-}
-.staff-card .btn-wrapper a:after {
-  transition: all 0.3s ease;
-  content: "";
-  height: 3px;
-  width: 100%;
-  background-color: #de732c;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.staff-card .btn-wrapper a:hover:after {
-  width: 0%;
-}
-
 .location-wrapper {
   display: flex;
   align-items: center;
@@ -1199,6 +1151,54 @@ header .menu-wrapper.active nav {
   }
 }
 
+.user-card-wrapper {
+  padding: 2em 0 0;
+}
+
+.user-card {
+  margin-bottom: 35px;
+}
+.user-card .user-image {
+  margin-bottom: 10px;
+}
+.user-card .user-image img {
+  max-width: 100%;
+}
+.user-card .user-properties {
+  text-align: center;
+}
+.user-card .user-properties .name {
+  font-size: 28px;
+  font-weight: bold;
+}
+.user-card .user-properties .position {
+  font-weight: 300;
+  margin: 10px 0;
+}
+.user-card .btn-wrapper {
+  padding: 0 0 1em;
+}
+.user-card .btn-wrapper .text-link {
+  color: #de732c;
+  position: relative;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.user-card .btn-wrapper .text-link:after {
+  transition: all 0.3s ease;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: #de732c;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user-card .btn-wrapper .text-link:hover:after {
+  width: 0%;
+}
+
 .accordion-wrapper {
   padding: 3em 0;
 }
@@ -1285,6 +1285,17 @@ header .menu-wrapper.active nav {
   .obit-card .btn-wrapper a:first-child {
     margin-bottom: 10px;
   }
+}
+
+.sendflowers-card-wrapper {
+  margin: 5em 0;
+}
+.sendflowers-card-wrapper .user-card .user-image {
+  max-height: 290px;
+  overflow: hidden;
+}
+.sendflowers-card-wrapper .user-card .user-properties .btn-wrapper {
+  padding: 1em 0;
 }
 
 /*# sourceMappingURL=style.css.map */
