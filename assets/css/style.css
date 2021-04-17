@@ -78,6 +78,11 @@ button.btn:focus {
 .page-navigation .showmore-links {
   display: none;
 }
+.page-navigation .pageNavDropdownItem {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
 .page-navigation ul {
   justify-content: center;
   margin: 0;
@@ -95,7 +100,6 @@ button.btn:focus {
   text-transform: uppercase;
   position: relative;
   transition: all 0.3s ease-in;
-  margin-bottom: 10px;
 }
 .page-navigation ul li a::after {
   transition: all 0.3s ease-in;
@@ -122,72 +126,88 @@ button.btn:focus {
 }
 @media (max-width: 767px) {
   .page-navigation {
-    padding-bottom: 0;
     position: relative;
+    padding: 0;
+  }
+  .page-navigation .pagenav-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    justify-content: space-around;
   }
   .page-navigation ul {
-    overflow-x: auto;
     flex-wrap: wrap;
   }
   .page-navigation ul li {
     width: auto;
-    margin-bottom: 20px;
-    padding: 0 5px;
   }
   .page-navigation ul li a {
     text-align: center;
     font-size: 14px;
-    padding: 0 3px 10px;
+    padding: 0 10px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  .page-navigation ul li.active a, .page-navigation ul li:hover a {
+    color: #de732c;
+  }
+  .page-navigation ul li.active a::after, .page-navigation ul li:hover a::after {
+    display: none;
   }
   .page-navigation .showmore-links {
     display: block;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
   }
   .page-navigation .showmore-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px 3px;
     border-radius: 5px;
-    color: #fff;
+    color: #0c2230;
     font-size: 24px;
     font-weight: bold;
     margin: 0 0 0 auto;
-    background: #de732c;
+    transition: all 0.3s ease;
   }
-  .page-navigation .showmore-links .pageNavDropdownItem {
+  .page-navigation .showmore-links a.active {
+    transform: rotate(90deg);
+  }
+  .page-navigation .pageNavDropdownItem {
     position: absolute;
-    top: 102%;
+    top: 100%;
     right: 0;
     background: #fff;
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
-    width: 250px;
-    display: none;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
   }
-  .page-navigation .showmore-links .pageNavDropdownItem ul li {
+  .page-navigation .pageNavDropdownItem ul li {
     margin-bottom: 0;
     padding: 0;
   }
-  .page-navigation .showmore-links .pageNavDropdownItem ul li a {
+  .page-navigation .pageNavDropdownItem ul li a {
     background: none;
     border-radius: 0;
     color: #0c2230;
-    font-size: 13px;
-    font-weight: normal;
+    font-size: 14px;
+    font-weight: bold;
     display: block;
     text-align: left;
-    padding: 7px 10px;
+    padding: 10px 15px;
+    color: #606060;
   }
-  .page-navigation .showmore-links .pageNavDropdownItem ul li:hover a::after {
+  .page-navigation .pageNavDropdownItem ul li:hover a::after {
     display: none;
   }
-  .page-navigation .showmore-links .pageNavDropdownItem.active {
-    display: block;
+  .page-navigation .pageNavDropdownItem ul li.active a {
+    color: #de732c;
+  }
+  .page-navigation .pageNavDropdownItem.active {
+    transform: translateX(0%);
+    height: auto;
+    width: 65%;
   }
 }
 
@@ -1216,6 +1236,9 @@ header .menu-wrapper.active nav {
   position: relative;
 }
 @media (max-width: 767px) {
+  #about-content {
+    overflow: hidden;
+  }
   #about-content.content-padding {
     padding-bottom: 0;
   }

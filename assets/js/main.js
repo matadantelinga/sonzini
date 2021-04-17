@@ -141,6 +141,7 @@ $(document).ready(function () {
 
 	$("#pageNavDropdown").click(function (e) {
 		e.preventDefault();
+		$(this).toggleClass("active")
 		if ($(".pageNavDropdownItem").hasClass("active")) {
 			$(".pageNavDropdownItem").removeClass("active");
 		} else {
