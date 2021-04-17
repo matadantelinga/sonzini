@@ -1,255 +1,295 @@
 header {
-  background-color: $darkBlue;
-  padding: 5px 0;
-  .logo-wrapper {
-    flex: 0 0 20%;
-    max-width: 20%;
-    img {
-      max-height: 75px;
-    }
-  }
-  .navigation {
-    flex: 0 0 80%;
-    max-width: 80%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    color: #fff;
-    justify-content: flex-end;
-    .obituaries {
-      margin: 0 2em;
-    }
+	background-color: $darkBlue;
+	padding: 5px 0;
+	.logo-wrapper {
+		flex: 0 0 20%;
+		max-width: 20%;
+		img {
+			max-height: 75px;
+		}
+	}
+	.navigation {
+		flex: 0 0 80%;
+		max-width: 80%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		color: #fff;
+		justify-content: flex-end;
+		.obituaries {
+			margin: 0 2em;
+			position: relative;
+			&.active {
+				padding-bottom: 10px;
+				&::after {
+					content: "";
+					height: 3px;
+					background: $orange;
+					width: 100%;
+					bottom: 0;
+					left: 0px;
+					position: absolute;
+				}
+			}
+		}
 
-    .humburger-btn {
-      cursor: pointer;
-      margin-left: 2em;
-      span {
-        display: block;
-        height: 2px;
-        background-color: #fff;
-        width: 20px;
-        margin-bottom: 5px;
-        &:last-child {
-          margin: 0;
-        }
-      }
-    }
-  }
-  .menu-wrapper {
-    background: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    nav {
-      background: #17374c;
-      height: 100%;
-      width: 0;
-      overflow: hidden;
-      transition: 0.5s;
-      position: fixed;
-      right: 0;
-      top: 0;
-      #btn-close {
-        cursor: pointer;
-        padding: 1em;
-        img {
-          max-width: 28px;
-        }
-      }
-      .menu-item {
-        .menu-title {
-          font-family: $headerFont;
-          text-transform: uppercase;
-          font-size: 38px;
-          color: #fff;
-          margin-bottom: 1em;
-          padding-left: 40px;
-          &::after {
-            height: 3px;
-            display: block;
-            background: $orange;
-            width: 105px;
-            content: "";
-          }
-        }
-        ul {
-          padding-left: 0;
-          li {
-            list-style: none;
-            a {
-              display: block;
-              padding: 15px 40px;
-              color: #fff;
-              font-family: $headerFont;
-              width: 100%;
-              text-transform: uppercase;
-              &:hover {
-                color: $orange;
-              }
-            }
-            &.active {
-              a {
-                color: $orange;
-              }
-            }
-            &.has-child {
-              > a {
-                position: relative;
-                &::after {
-                  content: "\25B6";
-                  font-size: 10px;
-                  position: absolute;
-                  right: 30px;
-                  transition: transform 0.3s;
-                }
-                &.active {
-                  &::after {
-                    transform: rotate(90deg);
-                    transition: transform 0.3s;
-                  }
-                }
-              }
-              .child-menu {
-                ul {
-                  .active {
-                    a {
-                      border-left: solid 3px $orange;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        .child-menu {
-          background: rgba(0, 0, 0, 0.2);
-        }
-      }
-    }
-    &.active {
-      width: 100%;
-      nav {
-        width: 22%;
-        transition: 0.5s;
-      }
-    }
-  }
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .contact,
-    .obituaries {
-      display: none;
-    }
-    .menu-wrapper {
-      &.active {
-        nav {
-          width: 50%;
-        }
-      }
-    }
-  }
-  @media (max-width: 767px) {
-    .contact,
-    .obituaries {
-      display: none;
-    }
-    .menu-wrapper {
-      &.active {
-        nav {
-          width: 100%;
-        }
-      }
-    }
-  }
-  @media (max-width: 767px) and (orientation: portrait) {
-    .header-cta {
-      display: none;
-    }
-  }
+		.humburger-btn {
+			cursor: pointer;
+			margin-left: 2em;
+			span {
+				display: block;
+				height: 2px;
+				background-color: #fff;
+				width: 20px;
+				margin-bottom: 5px;
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	.menu-wrapper {
+		background: rgba(0, 0, 0, 0.7);
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		right: 0;
+		overflow: hidden;
+		transition: 0.5s;
+		nav {
+			background: #17374c;
+			height: 100%;
+			width: 0;
+			overflow: hidden;
+			transition: 0.5s;
+			position: fixed;
+			right: 0;
+			top: 0;
+			#btn-close {
+				cursor: pointer;
+				padding: 1em;
+				img {
+					max-width: 28px;
+				}
+			}
+			.menu-item {
+				overflow-x: scroll;
+				padding-bottom: 4em;
+				height: 100%;
+				&::-webkit-scrollbar {
+					width: 0.75em;
+				}
+
+				&::-webkit-scrollbar-track {
+					box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background-color: $orange;
+				}
+				.menu-title {
+					font-family: $headerFont;
+					text-transform: uppercase;
+					font-size: 38px;
+					color: #fff;
+					margin-bottom: 1em;
+					padding-left: 40px;
+					&::after {
+						height: 3px;
+						display: block;
+						background: $orange;
+						width: 105px;
+						content: "";
+					}
+				}
+				ul {
+					padding-left: 0;
+					li {
+						list-style: none;
+						a {
+							display: block;
+							padding: 15px 40px;
+							color: #fff;
+							font-family: $headerFont;
+							width: 100%;
+							text-transform: uppercase;
+							&:hover {
+								color: $orange;
+							}
+						}
+						&.active {
+							a {
+								color: $orange;
+							}
+						}
+						&.has-child {
+							> a {
+								position: relative;
+								&::after {
+									content: "\25B6";
+									font-size: 10px;
+									position: absolute;
+									right: 30px;
+									transition: transform 0.3s;
+								}
+								&.active {
+									&::after {
+										transform: rotate(90deg);
+										transition: transform 0.3s;
+									}
+								}
+							}
+							.child-menu {
+								ul {
+									.active {
+										a {
+											border-left: solid 3px $orange;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.child-menu {
+					background: rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+		&.active {
+			width: 100%;
+			nav {
+				width: 22%;
+				transition: 0.5s;
+			}
+		}
+	}
+	@media (min-width: 800px) and (max-width: 990px) {
+		.menu-wrapper {
+			&.active {
+				nav {
+					width: 35%;
+				}
+			}
+		}
+		.contact,
+		.obituaries {
+			display: none;
+		}
+	}
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+		.contact,
+		.obituaries {
+			display: none;
+		}
+		.menu-wrapper {
+			&.active {
+				nav {
+					width: 50%;
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		.contact,
+		.obituaries {
+			display: none;
+		}
+		.menu-wrapper {
+			&.active {
+				nav {
+					width: 100%;
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) and (orientation: portrait) {
+		.header-cta {
+			display: none;
+		}
+	}
 }
 
 #footer-section {
-  background-color: $darkBlue;
-  color: #fff;
-  .social-wrapper {
-    text-align: right;
-    text-transform: uppercase;
-    font-family: $headerFont;
-    a {
-      i {
-        background-color: $orange;
-        padding: 12px 15px;
-        transition: background-color 0.3s ease-in;
-        color: #fff;
-      }
-      &:hover {
-        i {
-          transition: background-color 0.3s ease-out;
-          background-color: #fff;
-          color: $darkBlue;
-        }
-      }
-    }
-  }
+	background-color: $darkBlue;
+	color: #fff;
+	.social-wrapper {
+		text-align: right;
+		text-transform: uppercase;
+		font-family: $headerFont;
+		a {
+			i {
+				background-color: $orange;
+				padding: 12px 15px;
+				transition: background-color 0.3s ease-in;
+				color: #fff;
+			}
+			&:hover {
+				i {
+					transition: background-color 0.3s ease-out;
+					background-color: #fff;
+					color: $darkBlue;
+				}
+			}
+		}
+	}
 
-  .footer-links {
-    padding: 3em 0;
-    .link-item {
-      margin-bottom: 3em;
-      .title {
-        font-weight: bold;
-        font-family: $headerFont;
-        color: $orange;
-        text-transform: uppercase;
-        margin-bottom: 1em;
-      }
-      ul {
-        padding-left: 0;
-        li {
-          list-style: none;
-          margin-bottom: 10px;
-          word-break: break-word;
-          a {
-            color: #fff;
-            text-transform: capitalize;
-            &:hover {
-              color: $orange;
-            }
-          }
-        }
-      }
-    }
-  }
+	.footer-links {
+		padding: 3em 0;
+		.link-item {
+			margin-bottom: 3em;
+			.title {
+				font-weight: bold;
+				font-family: $headerFont;
+				color: $orange;
+				text-transform: uppercase;
+				margin-bottom: 1em;
+			}
+			ul {
+				padding-left: 0;
+				li {
+					list-style: none;
+					margin-bottom: 10px;
+					word-break: break-word;
+					a {
+						color: #fff;
+						text-transform: capitalize;
+						&:hover {
+							color: $orange;
+						}
+					}
+				}
+			}
+		}
+	}
 
-  .footer-copyright {
-    color: #415e70;
-    font-size: 13px;
-    .align-right {
-      text-align: right;
-      a {
-        color: #415e70;
-        text-transform: uppercase;
-        &:hover {
-          color: $orange;
-        }
-      }
-    }
-  }
+	.footer-copyright {
+		color: #415e70;
+		font-size: 13px;
+		.align-right {
+			text-align: right;
+			a {
+				color: #415e70;
+				text-transform: uppercase;
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
 
-  @media (max-width: 767px) {
-    padding: 2em 3em;
-    .logo-wrapper,
-    .social-wrapper,
-    .footer-copyright,
-    .footer-copyright .align-right {
-      text-align: center;
-    }
-    .footer-copyright .align-right {
-      margin-top: 20px;
-    }
-  }
+	@media (max-width: 767px) {
+		padding: 2em 3em;
+		.logo-wrapper,
+		.social-wrapper,
+		.footer-copyright,
+		.footer-copyright .align-right {
+			text-align: center;
+		}
+		.footer-copyright .align-right {
+			margin-top: 20px;
+		}
+	}
 }

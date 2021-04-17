@@ -94,6 +94,7 @@ button {
 				text-transform: uppercase;
 				position: relative;
 				transition: all 0.3s ease-in;
+				margin-bottom: 10px;
 				&::after {
 					transition: all 0.3s ease-in;
 					width: 0;
@@ -434,6 +435,23 @@ button {
 	margin-bottom: 10px;
 	img {
 		max-width: 100px;
+	}
+}
+
+#notfound-page {
+	.page-icon {
+		img {
+			max-height: 280px;
+			max-width: inherit;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.page-icon {
+			img {
+				width: 80%;
+			}
+		}
 	}
 }
 

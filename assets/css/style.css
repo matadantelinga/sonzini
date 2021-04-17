@@ -92,6 +92,7 @@ button.btn:focus {
   text-transform: uppercase;
   position: relative;
   transition: all 0.3s ease-in;
+  margin-bottom: 10px;
 }
 .page-navigation ul li a::after {
   transition: all 0.3s ease-in;
@@ -415,6 +416,16 @@ button.btn:focus {
   max-width: 100px;
 }
 
+#notfound-page .page-icon img {
+  max-height: 280px;
+  max-width: inherit;
+}
+@media (max-width: 767px) {
+  #notfound-page .page-icon img {
+    width: 80%;
+  }
+}
+
 input:focus {
   outline: none;
   box-shadow: none;
@@ -473,6 +484,19 @@ header .navigation {
 }
 header .navigation .obituaries {
   margin: 0 2em;
+  position: relative;
+}
+header .navigation .obituaries.active {
+  padding-bottom: 10px;
+}
+header .navigation .obituaries.active::after {
+  content: "";
+  height: 3px;
+  background: #de732c;
+  width: 100%;
+  bottom: 0;
+  left: 0px;
+  position: absolute;
 }
 header .navigation .humburger-btn {
   cursor: pointer;
@@ -515,6 +539,20 @@ header .menu-wrapper nav #btn-close {
 }
 header .menu-wrapper nav #btn-close img {
   max-width: 28px;
+}
+header .menu-wrapper nav .menu-item {
+  overflow-x: scroll;
+  padding-bottom: 4em;
+  height: 100%;
+}
+header .menu-wrapper nav .menu-item::-webkit-scrollbar {
+  width: 0.75em;
+}
+header .menu-wrapper nav .menu-item::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+header .menu-wrapper nav .menu-item::-webkit-scrollbar-thumb {
+  background-color: #de732c;
 }
 header .menu-wrapper nav .menu-item .menu-title {
   font-family: "catamaran";
@@ -577,6 +615,15 @@ header .menu-wrapper.active {
 header .menu-wrapper.active nav {
   width: 22%;
   transition: 0.5s;
+}
+@media (min-width: 800px) and (max-width: 990px) {
+  header .menu-wrapper.active nav {
+    width: 35%;
+  }
+  header .contact,
+  header .obituaries {
+    display: none;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   header .contact,
