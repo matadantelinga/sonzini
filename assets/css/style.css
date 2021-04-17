@@ -482,6 +482,49 @@ button.btn:focus {
   }
 }
 
+.staff-modal .modal-content {
+  color: #000;
+}
+.staff-modal .modal-content .close-btn {
+  text-align: right;
+  padding: 1em;
+  font-size: 24px;
+  color: #d2d2d2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.staff-modal .modal-content .modal-body {
+  padding: 2.25rem 2rem 2rem;
+}
+.staff-modal .modal-content .modal-body .staff-title {
+  font-weight: bold;
+  font-size: 28px;
+  font-family: "catamaran";
+}
+.staff-modal .modal-content .modal-body .staff-position {
+  font-size: 16px;
+  font-style: italic;
+  text-transform: inherit;
+}
+.staff-modal .modal-content .modal-body p {
+  margin: 1.25rem 0;
+}
+.staff-modal .modal-content .modal-body .contact {
+  display: flex;
+  align-items: center;
+}
+.staff-modal .modal-content .modal-body .contact i {
+  margin-right: 5px;
+  font-size: 24px;
+  color: #de732c;
+}
+.staff-modal .modal-content .modal-body .contact a {
+  color: #de732c;
+}
+
 input:focus {
   outline: none;
   box-shadow: none;
@@ -1307,6 +1350,7 @@ header .menu-wrapper.active nav {
 .user-card .user-properties .position {
   font-weight: 300;
   margin: 10px 0;
+  text-transform: uppercase;
 }
 .user-card .btn-wrapper {
   padding: 0 0 1em;
