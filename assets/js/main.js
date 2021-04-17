@@ -138,4 +138,13 @@ $(document).ready(function () {
 			$(this).addClass("active");
 		}
 	});
+
+	$("#pageNavDropdown").click(function (e) {
+		e.preventDefault();
+		if ($(".pageNavDropdownItem").hasClass("active")) {
+			$(".pageNavDropdownItem").removeClass("active");
+		} else {
+			$(".pageNavDropdownItem").addClass("active");
+		}
+	});
 });

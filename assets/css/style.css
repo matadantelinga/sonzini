@@ -75,6 +75,9 @@ button.btn:focus {
   position: relative;
   z-index: 3;
 }
+.page-navigation .showmore-links {
+  display: none;
+}
 .page-navigation ul {
   justify-content: center;
   margin: 0;
@@ -120,19 +123,71 @@ button.btn:focus {
 @media (max-width: 767px) {
   .page-navigation {
     padding-bottom: 0;
+    position: relative;
   }
   .page-navigation ul {
     overflow-x: auto;
     flex-wrap: wrap;
   }
   .page-navigation ul li {
-    width: 50%;
+    width: auto;
     margin-bottom: 20px;
+    padding: 0 5px;
   }
   .page-navigation ul li a {
     text-align: center;
     font-size: 14px;
     padding: 0 3px 10px;
+  }
+  .page-navigation .showmore-links {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .page-navigation .showmore-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 3px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 0 auto;
+    background: #de732c;
+  }
+  .page-navigation .showmore-links .pageNavDropdownItem {
+    position: absolute;
+    top: 102%;
+    right: 0;
+    background: #fff;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    display: none;
+  }
+  .page-navigation .showmore-links .pageNavDropdownItem ul li {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .page-navigation .showmore-links .pageNavDropdownItem ul li a {
+    background: none;
+    border-radius: 0;
+    color: #0c2230;
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+    text-align: left;
+    padding: 7px 10px;
+  }
+  .page-navigation .showmore-links .pageNavDropdownItem ul li:hover a::after {
+    display: none;
+  }
+  .page-navigation .showmore-links .pageNavDropdownItem.active {
+    display: block;
   }
 }
 
@@ -158,6 +213,7 @@ button.btn:focus {
 @media (max-width: 767px) {
   .page-image {
     margin: 0 -15px;
+    overflow: hidden;
   }
   .page-image img {
     max-width: 100%;
