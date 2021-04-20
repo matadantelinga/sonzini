@@ -220,7 +220,7 @@ button.btn:focus {
 }
 @media (max-width: 767px) {
   .page-content-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 }
 
@@ -545,6 +545,14 @@ button.btn:focus {
   color: #de732c;
 }
 
+.text-12 {
+  font-size: 12px;
+}
+
+.text-gray {
+  color: #d2d2d2;
+}
+
 input:focus {
   outline: none;
   box-shadow: none;
@@ -579,6 +587,63 @@ form .input-group .form-control:focus:focus {
   outline: none;
   box-shadow: none;
   border-color: #de732c;
+}
+
+form.preplan-form .input-group label,
+form.preplan-form .input-group input,
+form.preplan-form .input-group textarea {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+form.preplan-form .input-group label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+form.preplan-form .input-group .radio-btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+form.preplan-form .input-group .radio-btn-wrapper .radio-item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+form.preplan-form .input-group .radio-btn-wrapper .radio-item input {
+  flex: 0 0 auto;
+  max-width: inherit;
+}
+form.preplan-form .input-group .radio-btn-wrapper .radio-item span {
+  margin-left: 5px;
+  flex: 1;
+}
+@media (max-width: 767px) {
+  form.preplan-form .input-group .radio-btn-wrapper {
+    flex-direction: column;
+  }
+}
+form.preplan-form .input-group .security-question-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+form.preplan-form .input-group .security-question-wrapper .text {
+  margin-right: 10px;
+  flex: 0 0 80%;
+  max-width: 80%;
+}
+form.preplan-form .input-group .security-question-wrapper .input {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+@media (max-width: 767px) {
+  form.preplan-form .input-group .security-question-wrapper .text, form.preplan-form .input-group .security-question-wrapper .input {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 header {
