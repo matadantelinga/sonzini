@@ -632,8 +632,8 @@ form.preplan-form .input-group .security-question-wrapper {
 }
 form.preplan-form .input-group .security-question-wrapper .text {
   margin-right: 10px;
-  flex: 0 0 80%;
-  max-width: 80%;
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 form.preplan-form .input-group .security-question-wrapper .input {
   flex: 0 0 20%;
